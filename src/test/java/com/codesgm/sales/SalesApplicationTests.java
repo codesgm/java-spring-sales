@@ -1,4 +1,4 @@
-package com.codesgm.Sales;
+package com.codesgm.sales;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
