@@ -4,6 +4,7 @@ import com.codesgm.sales.entities.Order;
 import com.codesgm.sales.entities.User;
 import com.codesgm.sales.respositories.OrderRepository;
 import com.codesgm.sales.respositories.UserRepository;
+import com.codesgm.sales.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,6 @@ public class OrderService {
 
     public Order findById(Long id){
         Optional<Order> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 }
